@@ -1,0 +1,12 @@
+{
+  "title": "Example",
+  "settings": {
+    "glyph": {
+      "label": "Glyph",
+      "description": "Glyph to show"
+    },
+    "show_glyph": {
+      "label": "Show glyph"
+    }
+  }
+}

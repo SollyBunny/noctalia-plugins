@@ -1,0 +1,27 @@
+id = "aurelia/cpu_clock_speed"
+name = "CPU Clock Speed"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Aurelia"
+license = "MIT"
+dependencies = []
+tags = []
+icon = "cpu"
+description = "Show the clock speed of your CPU"
+
+[[widget]]
+id = "cpu_clock_speed"
+entry = "cpu_clock_speed.luau"
+
+  [[widget.setting]]
+  key = "glyph"
+  type = "glyph"
+  label_key = "settings.glyph.label"
+  description_key = "settings.glyph.description"
+  default = "cpu"
+
+  [[widget.setting]]
+  key = "show_glyph"
+  type = "bool"
+  label_key = "settings.show_glyph.label"
+  default = true

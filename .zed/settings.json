@@ -1,0 +1,21 @@
+// https://github.com/4teapo/zed-luau#configuration
+{
+  "lsp": {
+    "luau-lsp": {
+      "settings": {
+        "luau-lsp": {
+          "sourcemap": {
+            "enabled": false,
+          },
+          "types": {
+            "definitionFiles": ["noctalia.d.luau"],
+          },
+          "format": {
+            "convertQuotes": true,
+          },
+        },
+      },
+    },
+  },
+  "tab_size": 2,
+}
