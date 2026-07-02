@@ -38,5 +38,6 @@ function updateInfo()
 end
 
 function update()
+  updateInfo()
   render()
 end
