@@ -31,7 +31,7 @@ function updateInfo()
       end
   end
   if cpuFound then
-    label = string.format("%.2f", maxFreq / 1000)
+    label = string.format("%.1f", maxFreq / 1000) .. "GHz"
   else
     label = "No CPUs"
   end
