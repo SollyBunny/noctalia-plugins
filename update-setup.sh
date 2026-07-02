@@ -28,3 +28,6 @@ cp -r /tmp/official-plugins/.vscode .vscode
 echo "Copying .github"
 rm -rf .github
 cp -r /tmp/official-plugins/.github .github
+
+echo "Modifying workflows"
+sed -i "/github\.repository == 'noctalia-dev\/official-plugins'/d" .github/workflows/update-catalog.yml
