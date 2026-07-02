@@ -1,5 +1,7 @@
 --!nonstrict
 
+noctalia.setUpdateInterval(1000)
+
 local glyph = barWidget.getConfig("glyph")
 local showGlyph = barWidget.getConfig("show_glyph")
 
