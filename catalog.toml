@@ -15,3 +15,14 @@ icon = "cpu"
 description = "Show the clock speed of your CPU"
 min_noctalia = "5.0.0"
 tags = ["perf"]
+
+[[plugin]]
+id = "noctalia/window_count"
+name = "Window Count"
+version = "1.0.0"
+author = "Aurelia"
+license = "MIT"
+icon = "window"
+description = "Show number of windows (MangoWM only)"
+min_noctalia = "5.0.0"
+tags = ["wm"]
