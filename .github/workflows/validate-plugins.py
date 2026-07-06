@@ -27,7 +27,7 @@ ROOT_STRING_FIELDS = (
 ROOT_ARRAY_FIELDS = ("dependencies", "tags")
 ENTRY_TYPES = ("widget", "panel", "shortcut", "desktop_widget", "launcher_provider", "service")
 SETTING_OWNER_TYPES = ("widget", "panel", "desktop_widget", "launcher_provider")
-SETTING_TYPES = {"string", "string_list", "bool", "glyph", "select", "folder", "int", "color"}
+SETTING_TYPES = {"string", "string_list", "bool", "glyph", "select", "folder", "file", "int", "color"}
 PANEL_PLACEMENTS = {"attached", "floating"}
 PANEL_POSITIONS = {
     "auto",
@@ -321,13 +321,25 @@ class Validator:
                 self.add_context_error(manifest_path, category_context, "glyph must be a non-empty string")
 
     def validate_panel_fields(self, manifest_path: Path, context: str, entry: dict[str, Any]) -> None:
+        # Mirrors the shell parser: a positive number (logical px) or the
+        # literal string "fill" (span the output's available extent; requires
+        # floating placement).
+        uses_fill = False
         for field in ("width", "height"):
             if field not in entry:
                 continue
 
             value = entry[field]
-            if not is_number(value) or value < 0:
-                self.add_context_error(manifest_path, context, f"{field} must be a non-negative number")
+            if isinstance(value, str):
+                if value != "fill":
+                    self.add_context_error(manifest_path, context, f'{field} must be a positive number or "fill"')
+                else:
+                    uses_fill = True
+            elif not is_number(value) or value <= 0:
+                self.add_context_error(manifest_path, context, f'{field} must be a positive number or "fill"')
+
+        if uses_fill and entry.get("placement", "floating") != "floating":
+            self.add_context_error(manifest_path, context, 'width/height "fill" requires placement = "floating"')
 
         if "placement" in entry:
             placement = entry["placement"]
@@ -418,12 +430,12 @@ class Validator:
         option_values: list[str],
     ) -> None:
         if "default" not in setting:
-            if setting_type != "folder":
+            if setting_type not in {"folder", "file"}:
                 self.add_context_error(manifest_path, context, "default is required")
             return
 
         default = setting["default"]
-        if setting_type in {"string", "folder"} and not isinstance(default, str):
+        if setting_type in {"string", "folder", "file"} and not isinstance(default, str):
             self.add_context_error(manifest_path, context, "default must be a string")
         elif setting_type in {"glyph", "color"} and not is_non_empty_string(default):
             self.add_context_error(manifest_path, context, "default must be a non-empty string")
