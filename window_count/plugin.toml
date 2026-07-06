@@ -11,12 +11,16 @@ description = "Show number of windows (MangoWM only)"
 
 [[widget]]
 id = "window_count"
-entry = "window_count.luau"
+entry = "widget.luau"
 
-  [[widget.setting]]
-  key = "direction"
-  type = "select"
-  options = ["left", "Left", "all", "All", "right", "Right"]
-  label = "Direction"
-  description = "Either count all windows, or only ones left or right of the focused"
-  default = true
+	[[widget.setting]]
+	key = "direction"
+	type = "select"
+	options = ["Left", "All", "Right", "Position"]
+	label_key = "settings.direction.label"
+	description_key = "settings.direction.description"
+	default = "All"
+
+[[service]]
+id = "service"
+entry = "service.luau"

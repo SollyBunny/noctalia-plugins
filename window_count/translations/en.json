@@ -1,0 +1,9 @@
+{
+	"title": "Example",
+	"settings": {
+		"direction": {
+			"label": "Direction",
+			"description": "Either count all windows, or only ones left or right of the focused"
+		}
+	}
+}

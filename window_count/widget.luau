@@ -1,19 +1,19 @@
 --!nonstrict
 
--- noctalia.setUpdateInterval(1000)
+noctalia.setUpdateInterval(1e8) -- Never please
 
--- local glyph = barWidget.getConfig("glyph")
--- local showGlyph = barWidget.getConfig("show_glyph")
+local DIRECTIONS = {"Left", "All", "Right", "Position"}
 
--- local label = "???"
+local direction: "Left" | "All" | "Right" | "Position" = barWidget.getConfig("direction")
 
-function render()
-  -- if showGlyph then
-  --     barWidget.setGlyph(glyph)
-  -- end
-  barWidget.setText("temp")
+local index
+for i = 1, #DIRECTIONS do
+	if DIRECTIONS[i] == direction then
+		index = i
+		break
+	end
 end
 
-function update()
-  render()
-end
+noctalia.state.watch("data", function(data)
+	barWidget.setText(string.split(data, ",")[index])
+end)
