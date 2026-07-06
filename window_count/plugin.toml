@@ -1,0 +1,22 @@
+id = "noctalia/window_count"
+name = "Window Count"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Aurelia"
+license = "MIT"
+dependencies = []
+tags = ["wm"]
+icon = "window"
+description = "Show number of windows (MangoWM only)"
+
+[[widget]]
+id = "window_count"
+entry = "window_count.luau"
+
+  [[widget.setting]]
+  key = "direction"
+  type = "select"
+  options = ["left", "Left", "all", "All", "right", "Right"]
+  label = "Direction"
+  description = "Either count all windows, or only ones left or right of the focused"
+  default = true
