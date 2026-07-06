@@ -13,15 +13,15 @@ description = "Show the clock speed of your CPU"
 id = "cpu_clock_speed"
 entry = "widget.luau"
 
-  [[widget.setting]]
-  key = "glyph"
-  type = "glyph"
-  label = "Glyph"
-  description = "Glyph to show"
-  default = "cpu"
+	[[widget.setting]]
+	key = "glyph"
+	type = "glyph"
+	label_key = "settings.glyph.label"
+	description_key = "settings.glyph.description"
+	default = "cpu"
 
-  [[widget.setting]]
-  key = "show_glyph"
-  type = "bool"
-  label = "Show glyph"
-  default = true
+	[[widget.setting]]
+	key = "show_glyph"
+	type = "bool"
+	label_key = "settings.show_glyph.label"
+	default = true
