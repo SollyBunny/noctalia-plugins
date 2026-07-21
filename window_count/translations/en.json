@@ -3,7 +3,13 @@
 	"settings": {
 		"direction": {
 			"label": "Direction",
-			"description": "Either count all windows, or only ones left or right of the focused"
+			"description": "Either count all windows, or only ones left or right of the focused",
+			"options": {
+				"left": "Left",
+				"all": "All",
+				"right": "Right",
+				"position": "Position"
+			}
 		}
 	}
 }
