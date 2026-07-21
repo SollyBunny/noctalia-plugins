@@ -10,7 +10,7 @@ icon = "cpu"
 description = "Show the clock speed of your CPU"
 
 [[widget]]
-id = "cpu_clock_speed"
+id = "widget"
 entry = "widget.luau"
 
 	[[widget.setting]]

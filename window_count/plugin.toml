@@ -10,7 +10,7 @@ icon = "window"
 description = "Show number of windows (MangoWM only)"
 
 [[widget]]
-id = "window_count"
+id = "widget"
 entry = "widget.luau"
 
 	[[widget.setting]]
