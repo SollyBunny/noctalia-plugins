@@ -6,7 +6,7 @@
 # host re-reads it on enable. Keep one [[plugin]] row per plugin subdirectory.
 
 [[plugin]]
-id = "noctalia/cpu_clock_speed"
+id = "aurelia/cpu_clock_speed"
 name = "CPU Clock Speed"
 version = "1.0.0"
 author = "Aurelia"
@@ -17,7 +17,7 @@ plugin_api = 3
 tags = ["bar"]
 
 [[plugin]]
-id = "noctalia/window_count"
+id = "aurelia/window_count"
 name = "Window Count"
 version = "1.0.0"
 author = "Aurelia"
