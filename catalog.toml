@@ -13,7 +13,7 @@ author = "Aurelia"
 license = "MIT"
 icon = "cpu"
 description = "Show the clock speed of your CPU"
-plugin_api = 5
+plugin_api = 3
 tags = ["bar"]
 
 [[plugin]]
@@ -24,5 +24,5 @@ author = "Aurelia"
 license = "MIT"
 icon = "window"
 description = "Show number of windows (MangoWM only)"
-plugin_api = 5
+plugin_api = 3
 tags = ["bar"]
