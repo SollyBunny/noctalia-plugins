@@ -1,7 +1,7 @@
 id = "noctalia/window_count"
 name = "Window Count"
 version = "1.0.0"
-plugin_api = 5
+plugin_api = 3
 author = "Aurelia"
 license = "MIT"
 dependencies = []
