@@ -24,7 +24,7 @@ entry = "widget.luau"
 	]
 	label_key = "settings.direction.label"
 	description_key = "settings.direction.description"
-	default = "All"
+	default = "all"
 
 [[service]]
 id = "service"
