@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 CATALOG_PATH = ROOT_DIR / "catalog.toml"
-REQUIRED_FIELDS = ("id", "name", "version", "author", "min_noctalia", "tags")
+REQUIRED_FIELDS = ("id", "name", "version", "author", "plugin_api", "tags")
 OPTIONAL_STRING_FIELDS = ("license", "icon", "description")
 OPTIONAL_BOOL_FIELDS = ("deprecated",)
 
@@ -23,6 +23,12 @@ def load_plugin_manifest(path: Path) -> dict:
     if missing:
         missing_fields = ", ".join(missing)
         raise ValueError(f"{path.relative_to(ROOT_DIR)} is missing: {missing_fields}")
+
+    plugin_api = manifest["plugin_api"]
+    if not isinstance(plugin_api, int) or isinstance(plugin_api, bool) or plugin_api <= 0:
+        raise ValueError(
+            f"{path.relative_to(ROOT_DIR)} has invalid plugin_api; expected a positive integer"
+        )
 
     if not isinstance(manifest["tags"], list) or not all(
         isinstance(tag, str) for tag in manifest["tags"]
@@ -109,7 +115,7 @@ def render_catalog(plugins: list[dict]) -> str:
             lines.append(f"deprecated = {toml_bool(plugin['deprecated'])}")
         lines.extend(
             [
-                f"min_noctalia = {toml_string(plugin['min_noctalia'])}",
+                f"plugin_api = {plugin['plugin_api']}",
                 "tags = ["
                 + ", ".join(toml_string(tag) for tag in plugin["tags"])
                 + "]",
