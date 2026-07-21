@@ -11,6 +11,12 @@ Shows window counts, optionally in a direction from the focused window
 | ID | `aurelia/window_count` |
 | Entries | Service: `service`; bar widget: `widget` |
 
+## Requirements
+
+Install `node`
+
+* [node](https://nodejs.org/)
+
 ## Usage
 
 Has no non visual behaviour
