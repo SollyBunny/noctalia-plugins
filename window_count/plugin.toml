@@ -1,11 +1,11 @@
 id = "noctalia/window_count"
 name = "Window Count"
 version = "1.0.0"
-min_noctalia = "5.0.0"
+plugin_api = 5
 author = "Aurelia"
 license = "MIT"
 dependencies = []
-tags = ["wm"]
+tags = ["bar"]
 icon = "window"
 description = "Show number of windows (MangoWM only)"
 

@@ -1,11 +1,11 @@
 id = "noctalia/cpu_clock_speed"
 name = "CPU Clock Speed"
 version = "1.0.0"
-min_noctalia = "5.0.0"
+plugin_api = 5
 author = "Aurelia"
 license = "MIT"
 dependencies = []
-tags = ["perf"]
+tags = ["bar"]
 icon = "cpu"
 description = "Show the clock speed of your CPU"
 
