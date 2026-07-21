@@ -2,8 +2,8 @@
 
 noctalia.setUpdateInterval(1000)
 
-local glyph = barWidget.getConfig("glyph")
-local showGlyph = barWidget.getConfig("show_glyph")
+local glyph = noctalia.getConfig("glyph")
+local showGlyph = noctalia.getConfig("show_glyph")
 
 local label = "???"
 

@@ -4,7 +4,7 @@ noctalia.setUpdateInterval(1e8) -- Never please
 
 local DIRECTIONS = {"Left", "All", "Right", "Position"}
 
-local direction: "Left" | "All" | "Right" | "Position" = barWidget.getConfig("direction")
+local direction: "Left" | "All" | "Right" | "Position" = noctalia.getConfig("direction")
 
 local index
 for i = 1, #DIRECTIONS do
