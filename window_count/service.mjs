@@ -18,19 +18,19 @@ const DEBOUNCE_MS = 50;
 
 const DIRECTIONS = [
 	{
-		name: "Left",
+		name: "left",
 		format: count => count === 0 ? "" : `← ${count}`,
 		counts: (focused, other) => other.x < focused.x,
 	}, {
-		name: "All",
+		name: "all",
 		format: count => count === 0 ? "" : `${count}`,
 		counts: () => true,
 	}, {
-		name: "Right",
+		name: "right",
 		format: count => count === 0 ? "" : `${count} →`,
 		counts: (focused, other) => other.x + other.width > focused.x + focused.width,
 	}, {
-		name: "Position",
+		name: "position",
 		format: (count, total) => total === 0 ? "" : `#${count + 1}`,
 		counts: (focused, other) => other.x < focused.x,
 	}

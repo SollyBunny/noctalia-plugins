@@ -17,10 +17,10 @@ entry = "widget.luau"
 	key = "direction"
 	type = "select"
 	options = [
-		{ value = "Left", label_key = "Left" },
-		{ value = "All", label_key = "All" },
-		{ value = "Right", label_key = "Right" },
-		{ value = "Position", label_key = "Position" }
+		{ value = "Left", label_key = "left" },
+		{ value = "All", label_key = "all" },
+		{ value = "Right", label_key = "right" },
+		{ value = "Position", label_key = "position" }
 	]
 	label_key = "settings.direction.label"
 	description_key = "settings.direction.description"
