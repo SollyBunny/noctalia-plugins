@@ -1,4 +1,4 @@
-id = "noctalia/cpu_clock_speed"
+id = "aurelia/cpu_clock_speed"
 name = "CPU Clock Speed"
 version = "1.0.0"
 plugin_api = 3

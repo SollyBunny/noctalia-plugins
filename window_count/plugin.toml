@@ -1,4 +1,4 @@
-id = "noctalia/window_count"
+id = "aurelia/window_count"
 name = "Window Count"
 version = "1.0.0"
 plugin_api = 3
@@ -16,7 +16,12 @@ entry = "widget.luau"
 	[[widget.setting]]
 	key = "direction"
 	type = "select"
-	options = ["Left", "All", "Right", "Position"]
+	options = [
+		{ value = "Left", label_key = "Left" },
+		{ value = "All", label_key = "All" },
+		{ value = "Right", label_key = "Right" },
+		{ value = "Position", label_key = "Position" }
+	]
 	label_key = "settings.direction.label"
 	description_key = "settings.direction.description"
 	default = "All"
