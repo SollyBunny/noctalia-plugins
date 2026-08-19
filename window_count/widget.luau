@@ -14,6 +14,10 @@ for i = 1, #DIRECTIONS do
 	end
 end
 
+local last
 noctalia.state.watch("data", function(data)
-	barWidget.setText(string.split(data, ",")[index])
+	local text = string.split(data, ",")[index]
+	if text == last then return end
+	last = text
+	barWidget.setText(text)
 end)
