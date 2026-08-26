@@ -2,19 +2,37 @@
 
 noctalia.setUpdateInterval(1e9) -- never please
 
-const tmppath = noctalia.runInTerminal("mktemp -d \"${XDG_RUNTIME_DIR:-/tmp}/aurelia_launcher_bash.XXXXXX\"")
-
-function onQuery(query)
-	local out = {}
-	const inputpath = `{tmppath}/fake_complete_input.txt`
-	noctalia.writeFile(inputpath, query)
-	const lines = noctalia.runInTerminal(`cat "{inputpath}" | ./"{noctalia.pluginDir()}/fake_complete.bash"`);
-	for line in lines:gmatch("[^\n]*") do
-		table.insert(out, { id = line, title = line })
-	end
-	launcher.setResults(query, out)
+local function replaceLastWord(s, word)
+	local endSpace = s:match("%s+$")
+	if endSpace then return s .. word end
+	local lastSpace = s:find("%s+%S+$")
+	if lastSpace then return s:sub(1, lastSpace - 1) .. word end
+	return word
 end
 
-function onActive(id)
+local inputpath = "/tmp/aurelia_launcher_bash"
+noctalia.runAsync("mktemp \"${XDG_RUNTIME_DIR:-/tmp}/aurelia_launcher_bash.XXXXXX\"", function(result: CommandResult)
+	inputpath = result.stdout
+end, 100)
 
+function onQuery(query)
+	local _, err = noctalia.writeFile(inputpath, query)
+	if err ~= nil then
+		launcher.setResults(query, {
+			{ id = "", title = "Error writing query", subtitle = err }
+		})
+		return
+	end
+	noctalia.runAsync(`cat "{inputpath}" | "{noctalia.pluginDir()}/fake_complete.bash"`, function(result: CommandResult)
+		local out = {}
+		for completion in result.stdout:gmatch("[^\n]*") do
+			if #completion < 1 then continue end
+			table.insert(out, { id = replaceLastWord(query, completion), title = completion })
+		end
+		launcher.setResults(query, out)
+	end, 500)
+end
+
+function onActivate(id)
+	noctalia.runInTerminal(id)
 end
