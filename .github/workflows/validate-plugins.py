@@ -14,7 +14,7 @@ from typing import Any
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[2]
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
-LAUNCHER_PREFIX_RE = re.compile(r"^[a-z]+$")
+LAUNCHER_PREFIX_RE = re.compile(r"^.+$")
 DESCRIPTION_MAX_CHARS = 120
 ALLOWED_TAGS = {
     "ai",

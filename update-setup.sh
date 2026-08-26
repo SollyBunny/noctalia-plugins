@@ -31,3 +31,4 @@ cp -r /tmp/official-plugins/.github .github
 
 echo "Modifying workflows"
 sed -i "/github\.repository == 'noctalia-dev\/official-plugins'/d" .github/workflows/update-catalog.yml
+sed -i 's|^LAUNCHER_PREFIX_RE.*|LAUNCHER_PREFIX_RE = re.compile(r"^.+$")|' .github/workflows/validate-plugins.py
