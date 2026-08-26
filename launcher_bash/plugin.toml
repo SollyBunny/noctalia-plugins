@@ -1,0 +1,17 @@
+id = "aurelia/launcher_bash"
+name = "Launcher Bash"
+version = "1.0.0"
+plugin_api = 3
+author = "Aurelia"
+license = "MIT"
+dependencies = []
+tags = ["launcher"]
+icon = "brand-tabler"
+description = "Run bash commands from the launcher"
+
+[[launcher_provider]]
+id = "launcher_bash"
+entry = "launcher_bash.luau"
+prefix = "$"
+glyph = "brand-tabler"
+include_in_global_search = false
