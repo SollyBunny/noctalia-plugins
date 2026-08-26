@@ -26,3 +26,14 @@ icon = "window"
 description = "Show number of windows (MangoWM only)"
 plugin_api = 3
 tags = ["bar"]
+
+[[plugin]]
+id = "aurelia/launcher_bash"
+name = "Launcher Bash"
+version = "1.0.0"
+author = "Aurelia"
+license = "MIT"
+icon = "brand-tabler"
+description = "Run bash commands from the launcher"
+plugin_api = 3
+tags = ["launcher"]
