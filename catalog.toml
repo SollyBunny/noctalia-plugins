@@ -1,14 +1,19 @@
 # This file is auto-generated. Do not edit manually.
 # Do not include it in your commit.
-# Official Noctalia plugins catalog.
-# Index of every plugin this source ships — the minimum needed to render, search,
+# Noctalia plugins catalog.
+# Index of every plugin this source ships: the minimum needed to render, search,
 # and compat-check the list. The per-plugin plugin.toml stays authoritative; the
 # host re-reads it on enable. Keep one [[plugin]] row per plugin subdirectory.
+# A [[plugin.release]] row names an older revision for a Noctalia below the tip's
+# plugin_api, so an older release stays installable instead of the plugin vanishing.
+# On every row, updated_at dates the commit that first shipped that row's version.
 
 [[plugin]]
 id = "aurelia/cpu_clock_speed"
 name = "CPU Clock Speed"
 version = "1.0.0"
+updated_at = 1783004866
+added_at = 1783004866
 author = "Aurelia"
 license = "MIT"
 icon = "cpu"
@@ -20,6 +25,8 @@ tags = ["bar"]
 id = "aurelia/window_count"
 name = "Window Count"
 version = "1.0.0"
+updated_at = 1783334215
+added_at = 1783334215
 author = "Aurelia"
 license = "MIT"
 icon = "window"
@@ -31,6 +38,8 @@ tags = ["bar"]
 id = "aurelia/bash_launcher"
 name = "Bash Launcher"
 version = "1.0.0"
+updated_at = 1787744389
+added_at = 1787744389
 author = "Aurelia"
 license = "MIT"
 icon = "brand-tabler"
