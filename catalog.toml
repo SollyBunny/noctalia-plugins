@@ -28,8 +28,8 @@ plugin_api = 3
 tags = ["bar"]
 
 [[plugin]]
-id = "aurelia/launcher_bash"
-name = "Launcher Bash"
+id = "aurelia/bash_launcher"
+name = "Bash Launcher"
 version = "1.0.0"
 author = "Aurelia"
 license = "MIT"
