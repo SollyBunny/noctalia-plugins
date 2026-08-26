@@ -25,8 +25,10 @@ function onQuery(query)
 	end
 	noctalia.runAsync(`cat "{inputpath}" | "{noctalia.pluginDir()}/fake_complete.bash"`, function(result: CommandResult)
 		local out = {}
+		table.insert(out, { id = query, title = query, subtitle = "No completion" })
 		for completion in result.stdout:gmatch("[^\n]*") do
 			if #completion < 1 then continue end
+			if completion == query then continue end
 			table.insert(out, { id = replaceLastWord(query, completion), title = completion })
 		end
 		launcher.setResults(query, out)
