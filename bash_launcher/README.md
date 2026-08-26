@@ -1,6 +1,6 @@
 # Bash Launcher
 
-Run bash commands from the launcher
+Run bash commands from the launcher. Supports bash completion.
 
 ## Plugin
 
@@ -8,7 +8,7 @@ Run bash commands from the launcher
 | --- | --- |
 | ID | `aurelia/bash_launcher` |
 | Entries | Launcher Provider: `bash_launcher` |
-| Launcher Prefix | `/$/ |
+| Launcher Prefix | `/$` |
 
 ## Usage
 
