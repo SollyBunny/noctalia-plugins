@@ -1,5 +1,5 @@
-id = "aurelia/launcher_bash"
-name = "Launcher Bash"
+id = "aurelia/bash_launcher"
+name = "Bash Launcher"
 version = "1.0.0"
 plugin_api = 3
 author = "Aurelia"
@@ -10,8 +10,8 @@ icon = "brand-tabler"
 description = "Run bash commands from the launcher"
 
 [[launcher_provider]]
-id = "launcher_bash"
-entry = "launcher_bash.luau"
+id = "bash_launcher"
+entry = "bash_launcher.luau"
 prefix = "$"
 glyph = "brand-tabler"
 include_in_global_search = false
