@@ -1,3 +1,9 @@
 {
-	"title": "Bash Launcher"
+	"title": "Bash Launcher",
+	"settings": {
+		"terminal_command": {
+			"label": "Terminal Command",
+			"description": "Command to run when opening terminal with bash launcher. $SCRIPT is replaced."
+		}
+	}
 }

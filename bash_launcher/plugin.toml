@@ -15,3 +15,10 @@ entry = "bash_launcher.luau"
 prefix = "$"
 glyph = "brand-tabler"
 include_in_global_search = false
+
+	[[launcher_provider.setting]]
+	key = "terminal_command"
+	type = "string"
+	label_key = "settings.terminal_command.label"
+	description_key = "settings.terminal_command.description"
+	default = "setsid kitty --hold -- bash \"$SCRIPT\""

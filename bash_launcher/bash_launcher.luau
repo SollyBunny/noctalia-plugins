@@ -2,6 +2,8 @@
 
 noctalia.setUpdateInterval(1e9) -- never please
 
+local terminalCommand = noctalia.getConfig("terminal_command")
+
 local function replaceLastWord(s, word)
 	if s:sub(-1) == " " then return s .. word end
 	local lastSpace = s:find("%s+%S+$")
@@ -112,7 +114,8 @@ function onActivate(id)
 			notifyError(`Failed to write to "{inputpath}"`)
 			return
 		end
-		noctalia.runAsync(`setsid kitty --hold -- bash "{inputpath}"`, function(result: CommandResult)
+
+		noctalia.runAsync(terminalCommand:gsub("$SCRIPT", inputpath), function(result: CommandResult)
 			if result.timedOut then
 				notifyError("Running command with terminal timed out")
 			elseif result.exitCode ~= 0 then
